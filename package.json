@@ -1,0 +1,20 @@
+{
+  "name": "service-station",
+  "version": "1.0.0",
+  "description": "admin tool for auto service station",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannieV/service-station.git"
+  },
+  "author": "Hanna Vostrova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannieV/service-station/issues"
+  },
+  "homepage": "https://github.com/hannieV/service-station#readme"
+}
