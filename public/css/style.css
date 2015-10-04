@@ -1,0 +1,31 @@
+body {
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	color: white;
+}
+
+.jumbotron{	
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.container-fluid{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width:100%;
+    transform: translate(-50%, -50%);
+    padding: 48px 60px 48px 60px;
+}
+
+.custom-block{
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 48px 60px 48px 60px;
+	border-radius: 6px;
+	min-width: 270px;
+}
+
+.form{
+	max-width: 500px;
+}

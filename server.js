@@ -1,18 +1,24 @@
 var express = require('express');
 var app = express();
 var mysql = require('mysql');
-var port = process.env.PORT || 8080;
+var path = require('path');
 
-var connection = mysql.createConnection({  
+app.use('/node_modules', express.static(__dirname + '/node_modules')); 
+app.use(express.static(__dirname + '/public'));  
+
+var connectionDB = mysql.createConnection({  
   host     : 'localhost',  
   user     : 'root',  
   password : '1',  
   database : 'service_center'  
 });  
 
-connection.connect();  
+connectionDB.connect();  
 
-require('./app/routes.js')(app); 
+app.get('/', function(req, res) {
+    res.sendfile('./public/views/index.html');
+});
 
-app.listen(port);
-console.log('Check some stuff on port ' + port);
+
+app.listen(8080);
+console.log('Check some stuff on port 8080');

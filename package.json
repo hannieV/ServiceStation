@@ -9,12 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hannieV/service-station.git"
+    "url": "git+https://github.com/hannieV/ServiceStation.git"
   },
   "author": "Hanna Vostrova",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hannieV/service-station/issues"
+    "url": "https://github.com/hannieV/ServiceStation/issues"
   },
-  "homepage": "https://github.com/hannieV/service-station#readme"
+  "homepage": "https://github.com/hannieV/ServiceStation#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "express": "^4.13.3",
+    "mysql": "^2.9.0"
+  }
 }
