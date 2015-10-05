@@ -1,0 +1,52 @@
+<%- include header.ejs %>
+
+<div class="custom-block">
+  <a class="btn btn-success btn-lg" href="../client_add"> <i class="fa fa-user-plus"></i> Add new client </a>
+  <br><br><br>
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th width="50px">No</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Birthday</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th width="120px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(clients.length){ 
+           for(var i = 0;i < clients.length;i++) { %>
+             <tr onclick="document.location = 'client_profile?id=<%=clients[i].id%>';">
+               <td>
+                 <%=(i+1)%></td>
+               <td>
+                 <%=clients[i].name%></td>
+               <td>
+                 <%=clients[i].surname%></td>
+               <td>
+                 <%date = new Date(clients[i].birthday) %>
+                 <%=str = date.getDate()+ '.' + date.getMonth()+'.'+ date.getFullYear() %></td>
+               <td>
+                 <%=clients[i].address%></td>
+               <td>
+                 <%=clients[i].phone%></td>
+               <td>
+                 <%=clients[i].email%></td>
+               <td>
+                 <a class="a-inside edit" href="../client_edit?id=<%=clients[i].id%>">Edit</a>
+                 <a class="a-inside delete" href="../client_delete?id=<%=clients[i].id%>">Delete</a>
+               </td>
+             </tr>
+      <% }
+         }else{ %>
+           <tr>
+             <td colspan="3">No customers</td>
+          </tr>
+      <% } %></tbody>
+  </table>
+</div>
+

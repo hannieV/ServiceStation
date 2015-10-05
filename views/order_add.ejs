@@ -1,0 +1,33 @@
+<%- include header.ejs %>
+
+   
+        <div class="container-fluid">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="custom-block form">
+                <h1><span class="fa fa-user-plus"></span> Add New Order</h1>
+
+                
+                <form action="/order_add" method="post">
+                    <div class="form-group">
+                        <label>Cost</label>
+                        $<input type="text" class="form-control" name="cost" pattern="^[\d]+$" required> 
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select name="status">
+                            <option value="1" selected>In progress</option>
+                            <option value="2">Completed</option>
+                            <option value="3">Cancelled</option>
+                        </select>
+                        <input type="hidden" class="form-control" name="car_id" value="<%=car_id%>" required> 
+                    </div>
+                    <button type="submit" class="btn btn-warning btn-lg">Add Order</button>
+                </form>
+            
+            </div>
+        </div>
+    </div>
+            
+       
+        
+

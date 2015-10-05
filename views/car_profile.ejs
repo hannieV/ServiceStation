@@ -1,0 +1,73 @@
+<%- include header.ejs %>
+
+<div class="custom-block">
+  <a class="btn btn-success btn-lg" href="../car_edit?id=<%=car[0].id%> "><i class="fa fa-pencil-square-o"></i> Edit info</a>
+  <a class="btn btn-danger btn-lg" href="../car_delete?id=<%=car[0].id%>&client_id=id=<%=car[0].client_id%>"><i class="fa fa-times"></i> Delete car</a>
+  <br><br>
+  
+  <div>
+    <label>Client ID: </label> <a href="../client_profile?id=<%=car[0].client_id%>"><%=car[0].client_id%> (open profile) </a>
+  </div>
+  <div>
+    <label>Make: </label>  <%=car[0].make%>
+  </div>
+  <div>
+    <label>Model: </label>  <%=car[0].model%>
+  </div>
+  <div>
+    <label>Year: </label>  <%=car[0].year%>
+  </div>
+  <div>
+    <label>VIN: </label>  <%=car[0].VIN%>
+  </div>
+  <br><br>
+  
+  <a class="btn btn-success btn-lg" href="../order_add?id=<%=car[0].id%>"><i class="fa fa-plus"></i><i class="fa fa-cog"></i> Add new order</a>
+  <br><br><br>
+  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th width="50px">No</th>
+        <th>Date</th>
+        <th>Cost</th>
+        <th>Status</th>
+        <th width="120px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(orders.length){ 
+        for(var i = 0;i < orders.length;i++) { %>
+          <tr>
+            <td><%=(i+1)%></td>
+            <td><%=orders[i].date%></td>
+            <td><%=orders[i].cost%></td>
+            <td><% switch (orders[i].status) {
+                     case 1:%> 
+                       <%='In progress'%>
+                       <%break
+                     case 2:%>
+                       <%='Completed'%>
+                       <% break
+                     case 3:%> 
+                       <%='Cancelled'%>
+                     <%} %>
+            </td>
+            <td>
+              <a class="a-inside edit" href="../order_edit?id=<%=orders[i].id%>">Edit</a>
+              <a class="a-inside delete" href="../order_delete?id=<%=orders[i].id%>&car_id=<%=orders[i].car_id%>">Delete</a>
+            </td> 
+          </tr></a>
+
+      <% }
+      
+      }else{ %>
+        <tr>
+          <td colspan="3">No orders</td>
+        </tr>
+      <% } %>
+    </tbody> 
+  </table>
+</div>
+
+        

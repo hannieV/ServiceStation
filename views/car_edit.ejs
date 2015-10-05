@@ -1,0 +1,34 @@
+<%- include header.ejs %>
+
+<div class="container-fluid">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="custom-block form">
+            <h1>
+                <span class="fa fa-pencil-square-o"></span>
+                Edit Car
+            </h1>
+
+            <form action="/car_edit" method="post">
+                <div class="form-group">
+                    <label>Make</label>
+                    <input type="text" class="form-control" name="make" value="<%=car[0].make%>" required></div>
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" class="form-control" name="model" value="<%=car[0].model%>" required></div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="text" class="form-control" name="year" value="<%=car[0].year%>" pattern="[\d]{4}" title="Must be 4 digits only" required></div>
+                <div class="form-group">
+                    <label>VIN</label>
+                    <input type="text" class="form-control" name="VIN" value="<%=car[0].VIN%>
+                    " required>
+                    <input type="hidden" class="form-control" name="id" value="<%=car[0].id%>" ></div>
+
+                <button type="submit" class="btn btn-warning btn-lg"> <i class="fa fa-floppy-o"></i>
+                    Save Changes
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>

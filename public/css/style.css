@@ -17,6 +17,7 @@ body {
     width:100%;
     transform: translate(-50%, -50%);
     padding: 48px 60px 48px 60px;
+    min-width: 350px;
 }
 
 .custom-block{
@@ -28,4 +29,17 @@ body {
 
 .form{
 	max-width: 500px;
+}
+
+.btn-xlg {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th {
+  background-color: rgba(0, 0, 0, 0.85);
 }
